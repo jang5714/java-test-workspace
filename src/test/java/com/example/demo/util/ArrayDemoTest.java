@@ -22,7 +22,7 @@ class ArrayDemoTest {
     }
 
     @Test
-    void fill() {
+    void test_fill() {
         String s = "";
         int[] arr = arrayDemo.fill(7);
         for(int i : arr){
@@ -32,12 +32,24 @@ class ArrayDemoTest {
     }
 
     @Test
-    void copy() {
+    void test_copy() {
         String s = "";
         int[] arr = arrayDemo.copy(new int[]{7,7,7,7,7},0,2,2);
         for (int i : arr){
             s += i;
         }
         assertEquals("00770",s);
+    }
+    @Test
+    void test_createIntegerArray(){
+        int[] arr = arrayDemo.createIntegerArray(2,7);
+        for (int e : arr){
+            System.out.print(e + " ");
+        }
+        int sum = 0;
+        for (int i : arr){
+            sum += i;
+        }
+        assertEquals(20,sum);
     }
 }
